@@ -1,9 +1,7 @@
-import type { NextPage } from 'next';
-import styled from '@emotion/styled';
-import { css } from '@emotion/react';
+import type { NextPage } from "next";
+import styled from "@emotion/styled";
 import GlobalStyle from "../styles/GlobalStyle";
-
-import Image from 'next/image';
+import Image from "next/image";
 
 const Container = styled.div`
   display: flex;
@@ -50,14 +48,14 @@ const EmojiWrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 16px;
 `;
 
 const Subtitle = styled.h2`
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 16px;
@@ -66,18 +64,19 @@ const Subtitle = styled.h2`
 const Paragraph = styled.p`
   color: #999;
   font-size: 1.5rem;
-  line-height: 1.5;
+  line-height: 1.75;
   font-weight: 300;
   margin-bottom: 16px;
 `;
 
 const ClosingTitle = styled(Title)`
   font-size: 1.75em;
-`
+`;
 
 const ClosingParagraph = styled(Paragraph)`
   font-size: 1em;
-`
+  margin-bottom: 32px;
+`;
 
 const BlockTitle = styled(Subtitle)`
   font-size: 1.25rem;
@@ -94,7 +93,7 @@ const GridContainer = styled.div`
   max-width: 800px;
   margin: 0 auto;
   align-items: start;
-  
+
   @media (max-width: 767px) {
     grid-template-columns: 1fr;
   }
@@ -126,7 +125,7 @@ const Contact = styled.a`
 const scrollToSection = (sectionId: string) => {
   const section = document.getElementById(sectionId);
   if (section) {
-    section.scrollIntoView({ behavior: 'smooth' });
+    section.scrollIntoView({ behavior: "smooth" });
   }
 };
 
@@ -135,21 +134,36 @@ const Home: NextPage = () => {
     <Container>
       <Section>
         <LogoWrapper>
-          <Image src="/saohaus.svg" alt="SAOHAUS" width={80} height={36} />
+          <Image src="/saohaus.svg" alt="SAOHAUS" width={64} height={24} />
         </LogoWrapper>
         <ContentWrapper>
           <Title>Augmenting Innovation</Title>
           <Paragraph>
-            Guiding and partnering with fast-paced startups and SMBs looking to weave AI/ML into their product development and design processes.
+            Guiding and partnering with fast-paced startups and SMBs looking to
+            weave AI/ML into their product development and design processes.
           </Paragraph>
-          {/* <Subtitle>A Collaborative Journey of Discovery</Subtitle>
-          <Paragraph>
-            As we navigate the next generation of technologies in product and design, our focus is on guiding and learning alongside businesses. We believe that weaving AI/ML into the very fabric of your organization's culture fosters creativity and drives growth.
-          </Paragraph> */}
         </ContentWrapper>
-        <EmojiWrapper onClick={() => scrollToSection('our-offerings')}>👇</EmojiWrapper>
+        <EmojiWrapper onClick={() => scrollToSection("value-prop")}>
+          👇
+        </EmojiWrapper>
       </Section>
-      <Section id="our-offerings">
+      <Section id="value-prop">
+        <ContentWrapper>
+          <ClosingTitle>Empowering Businesses of All Sizes</ClosingTitle>
+          <ClosingParagraph>
+            Whether you&apos;re a nimble startup, an ambitious small-to-medium
+            business (SMB), or a larger enterprise seeking to foster a culture
+            of innovation, we&apos;re here to support your journey.
+          </ClosingParagraph>
+          <ClosingTitle>Embrace the Future of Product and Design</ClosingTitle>
+          <ClosingParagraph>
+            Join us on an adventure of discovery and innovation. Together,
+            we&apos;ll explore the potential of AI/ML to create outstanding user
+            experiences and shape the future of your business.
+          </ClosingParagraph>
+        </ContentWrapper>
+      </Section>
+      <SectionWithFooter id="our-offerings">
         <ContentWrapper>
           <Title>Our offerings</Title>
           <GridContainer>
@@ -157,39 +171,41 @@ const Home: NextPage = () => {
               <Emoji>⚡</Emoji>
               <BlockTitle>Collaborative Learning</BlockTitle>
               <BlockContent>
-                Engage in interactive sessions designed to demystify AI/ML and inspire your team to harness its capabilities in your product development and design.
+                Engage in interactive sessions designed to demystify AI/ML and
+                inspire your team to harness its capabilities in your product
+                development and design.
               </BlockContent>
             </ContentBlock>
             <ContentBlock>
               <Emoji>🦾</Emoji>
               <BlockTitle>Advisory Support</BlockTitle>
               <BlockContent>
-                Benefit from insights and advice as we explore best practices for integrating cutting-edge technologies into your organization&apos;s workflow and decision-making.
+                Benefit from insights and advice as we explore best practices
+                for integrating cutting-edge technologies into your
+                organization&apos;s workflow and decision-making.
               </BlockContent>
             </ContentBlock>
             <ContentBlock>
               <Emoji>🗺️</Emoji>
               <BlockTitle>Strategy Development</BlockTitle>
               <BlockContent>
-                Develop a comprehensive strategy that aligns AI/ML with your organization&apos;s goals, values, and vision for the future. Our approach fosters collaboration and alignment, setting the stage for success.
+                Develop a comprehensive strategy that aligns AI/ML with your
+                organization&apos;s goals, values, and vision for the future.
+                Our approach fosters collaboration and alignment, setting the
+                stage for success.
               </BlockContent>
             </ContentBlock>
             <ContentBlock>
               <Emoji>🚀</Emoji>
               <BlockTitle>Build Next-Gen Teams</BlockTitle>
               <BlockContent>
-                Cultivate the product and design teams of tomorrow. We&apos;ll guide you in assembling and nurturing teams skilled in leveraging innovative technologies, fostering a culture of innovation, and delivering exceptional results.
+                Cultivate the product and design teams of tomorrow. We&apos;ll
+                guide you in assembling and nurturing teams skilled in
+                leveraging innovative technologies, fostering a culture of
+                innovation, and delivering exceptional results.
               </BlockContent>
             </ContentBlock>
           </GridContainer>
-        </ContentWrapper>
-      </Section>
-      <SectionWithFooter>
-        <ContentWrapper>
-          <ClosingTitle>Empowering Businesses of All Sizes</ClosingTitle>
-          <ClosingParagraph>Whether you&apos;re an agile startup, an ambitious small-to-medium business (SMB), or a larger enterprise seeking to foster a culture of innovation, we&apos;re here to support your journey. Our approach is flexible, adaptive, and centered on your unique aspirations.</ClosingParagraph>
-          <ClosingTitle>Embrace the Future of Product and Design</ClosingTitle>
-          <ClosingParagraph>Join us on an adventure of discovery and innovation. Together, we&apos;ll explore the potential of AI/ML to revolutionize product and design, create outstanding user experiences, and shape the future of your business.</ClosingParagraph>
         </ContentWrapper>
         <Contact href="mailto:silas@sao.haus">Get in touch</Contact>
       </SectionWithFooter>

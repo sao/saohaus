@@ -4,7 +4,7 @@ const GlobalStyle = () => (
   <Global
     styles={css`
       body {
-        font-family: 'Inter', sans-serif;
+        font-family: "Inter", sans-serif;
       }
     `}
   />
